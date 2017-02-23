@@ -15,9 +15,10 @@ class RaceController extends Controller
      */
     public function index()
     {
-
-        //Returns 5
-        return view('welcome')->with('races', Race::where('closing_time','>', Carbon::now())->orderBy('closing_time', "DESC")->get()->slice(0,5));
+        //sort in DB query to get the top 5
+        $races = Race::where('closing_time','>', Carbon::now())->orderBy('closing_time', "DESC")->get()->slice(0,5);
+        //Invert the sort - array level
+        return view('welcome')->with('races', $races->sortBy('closing_time'));
     }
 
     /**
