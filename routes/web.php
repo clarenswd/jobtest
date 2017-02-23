@@ -11,6 +11,10 @@
 |
 */
 
+
+//Shows the races
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('races', 'RaceController');
