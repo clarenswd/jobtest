@@ -3,11 +3,11 @@
 
             <div class="content">
                 <span class="title">Next 5 races</span>
-                <ol>
+                <ul>
                     @foreach ($races as $race)
-                        <li><a href="/races/{{$race->id}}" class="jx-countdown race {{$race->meeting->type}}-race" data-closing-time="{{$race->closing_time}}">{{$race->closing_time}}<i class="pe-7s-angle-right"></i></a></li>
+                        <li><a href="/races/{{$race->id}}" class="jx-countdown race {{$race->meeting->type}}-race" data-closing-time="{{$race->closing_time}}"><span class="jx-countdown-value">{{$race->closing_time}}</span><i class="pe-7s-angle-right"></i></a></li>
                     @endforeach
-                </ol>
+                </ul>
             </div>
 
 
@@ -24,11 +24,14 @@
                     .on('update.countdown', function(event) {
                         var format = '%H:%M:%S';
                         console.log(event.offset.minutes);
-//                        if(event.offset.minutes > 0) {
-//                            format = '%-M:%-S' ;
-//                        }
 
-                        $(this).html(event.strftime(format));
+                        if(event.offset.minutes > 0) {
+                            format = '%-M mins %-S sec' ;
+                        }
+                        if(event.offset.minutes > 0) {
+                            format = '%-M mins %-S sec' ;
+                        }
+                        $('.jx-countdown-value').html(event.strftime(format));
                     })
                     .on('finish.countdown', function(event) {
                         $(this).hide()

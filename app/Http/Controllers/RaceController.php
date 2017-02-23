@@ -50,7 +50,12 @@ class RaceController extends Controller
      */
     public function show($id)
     {
-        return view('races.single');
+        $race = [];
+        if (isset($id)){
+            $race = Race::find($id);
+
+        }
+        return view('races.single')->with('race', $race);
     }
 
     /**
