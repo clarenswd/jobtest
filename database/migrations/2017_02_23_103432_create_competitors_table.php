@@ -15,6 +15,13 @@ class CreateCompetitorsTable extends Migration
     {
         Schema::create('competitors', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('position')->default(0);
+
+            $table->integer('race_id');
+            $table->foreign('race_id')
+                ->references('id')->on('races')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

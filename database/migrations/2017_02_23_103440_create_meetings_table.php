@@ -15,6 +15,8 @@ class CreateMeetingsTable extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('location');
+            $table->char('type', 1); //The FIRST CHAR
             $table->timestamps();
         });
     }

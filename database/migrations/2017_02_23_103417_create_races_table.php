@@ -13,7 +13,17 @@ class CreateRacesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('races', function (Blueprint $table) {
+            $table->increments('id');
+            $table->time('closing_time');
+            $table->boolean('is_closed');
+
+            $table->integer('meeting_id');
+            $table->foreign('meeting_id')
+                ->references('id')->on('meetings')
+                ->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class CreateRacesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('races');
     }
 }
