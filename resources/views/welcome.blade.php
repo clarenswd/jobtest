@@ -25,24 +25,14 @@
                 height: 100vh;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
             .position-ref {
                 position: relative;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
 
             .content {
-                text-align: center;
+                text-align: left;
             }
 
             .title {
@@ -69,9 +59,12 @@
 
 
             <div class="content">
+                <h1>Next 5 races</h1>
+                <ol>
             @foreach ($races as $race)
-                    {{$race->closing_time}} - {{$race->meeting->type}}
+                    <li><a href="/races/{{$race->id}}">{{$race->closing_time}} - {{$race->meeting->type}}</a></li>
             @endforeach
+                </ol>
 
 
             </div>

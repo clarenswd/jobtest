@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Race;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RaceController extends Controller
@@ -16,7 +17,7 @@ class RaceController extends Controller
     {
 
         //Returns 5
-        return view('welcome')->with('races', Race::all()->sortBy('closing_time')->slice(0,5));
+        return view('welcome')->with('races', Race::where('closing_time','>', Carbon::now())->orderBy('closing_time', "DESC")->get()->slice(0,5));
     }
 
     /**
@@ -48,7 +49,7 @@ class RaceController extends Controller
      */
     public function show($id)
     {
-        //
+        return view();
     }
 
     /**
