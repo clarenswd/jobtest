@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Race;
 use Illuminate\Http\Request;
 
 class RaceController extends Controller
@@ -13,7 +14,9 @@ class RaceController extends Controller
      */
     public function index()
     {
-        //
+
+        //Returns 5
+        return view('welcome')->with('races', Race::all()->sortBy('closing_time')->slice(0,5));
     }
 
     /**

@@ -8,11 +8,11 @@ class Meeting extends Model
 {
 
     //should be stored in a table
-    var $type = [
-        'THOROUGHBRED'  => "T",
-        'GREYHOUNDS'  => "G",
-        'HARNESS'  => "H",
-        ];
+//    var $type = [
+//        'THOROUGHBRED'  => "T",
+//        'GREYHOUNDS'  => "G",
+//        'HARNESS'  => "H",
+//        ];
 
     //
     public function races(){

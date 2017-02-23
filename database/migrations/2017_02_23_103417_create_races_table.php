@@ -28,6 +28,9 @@ class CreateRacesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('races');
+        Schema::table('races', function (Blueprint $table) {
+            $table->dropForeign('meeting_id');
+        });
+        Schema::dropForeign('meeting_id');
     }
 }

@@ -14,7 +14,7 @@
 
 //Shows the races
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->action('RaceController@index');
 });
 
 Route::resource('races', 'RaceController');
