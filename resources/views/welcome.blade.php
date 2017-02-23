@@ -23,13 +23,16 @@
                 selfy.countdown("2020/10/10"+" "+selfy.data('closing-time'))
                     .on('update.countdown', function(event) {
                         var format = '%H:%M:%S';
-
+                        console.log(event.offset.minutes);
+//                        if(event.offset.minutes > 0) {
+//                            format = '%-M:%-S' ;
+//                        }
 
                         $(this).html(event.strftime(format));
                     })
                     .on('finish.countdown', function(event) {
-                        $(this).html('This offer has expired!')
-                        .parent().addClass('disabled');
+                        $(this).hide()
+
                     });;
             });
         });
