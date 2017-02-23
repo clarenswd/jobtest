@@ -30,7 +30,10 @@ class RaceController extends Controller
     public function create()
     {
         $meetings = Meeting::all();
-        return view('races.create_race')->with('meetings',$meetings);
+        $current_races= Race::all();
+
+        return view('races.create_race')
+            ->with(['meetings'=>$meetings, 'current_races'=>$current_races]);
     }
 
     /**
@@ -41,7 +44,15 @@ class RaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $modObj= new Race();
+        $modObj->closing_time    = $request->closing_time;
+        $modObj->meeting_id    = $request->meeting;
+        $modObj->save();
+
+        // redirect
+        Session::flash('message', 'Race was added to the system!');
+        return Redirect::to('games');
+
     }
 
     /**

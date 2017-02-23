@@ -11,10 +11,9 @@
     <div class="container">
         <div class="row">
             <div class="columns small-12 medium-4">
+
                 <form method="post" action="/races">
-
                     {{ csrf_field() }}
-
                     <div class="form-group">
                         <label for="meeting">Meeting</label>
                         <select name="meeting"  id="meeting" placeholder="Select Meeting">
@@ -33,6 +32,36 @@
 
                 </form>
             </div>
+
+            <div class="columns small-12 medium-8">
+                <div class="callout warning">
+                    <h6>Races data</h6>
+                    <p>We currently have <strong>{{count($current_races)}}</strong> stored in the system.</p>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th width="150">Race Time</th>
+                        <th width="150">Race Location | Meeting *</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($current_races as $current_race)
+                    <tr>
+                        <td>{{$current_race->closing_time}}</td>
+                        <td>{{$current_race->meeting->location}}</td>
+
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+
+                <small>
+                   * I didn't fully understand what exactly meeting was, I hope it will get explained in the next revision. I assumed and from google, those are the actual fields races take place.
+
+                </small>
+            </div>
+
         </div>
     </div>
 
