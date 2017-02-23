@@ -1,73 +1,37 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-
-            .position-ref {
-                position: relative;
-            }
-
-
-            .content {
-                text-align: left;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-
+@extends('layouts.app')
+@section('content')
 
             <div class="content">
-                <h1>Next 5 races</h1>
+                <span class="title">Next 5 races</span>
                 <ol>
-            @foreach ($races as $race)
-                    <li><a href="/races/{{$race->id}}">{{$race->closing_time}} - {{$race->meeting->type}}</a></li>
-            @endforeach
+                    @foreach ($races as $race)
+                        <li><a href="/races/{{$race->id}}" class="jx-countdown race {{$race->meeting->type}}-race" data-closing-time="{{$race->closing_time}}">{{$race->closing_time}}<i class="pe-7s-angle-right"></i></a></li>
+                    @endforeach
                 </ol>
-
-
             </div>
-        </div>
-    </body>
-</html>
+
+
+
+@endsection
+
+@section('xtra-js')
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script>
+        $(function(){
+            $('a.jx-countdown').each(function(){
+                var selfy =$(this);
+                selfy.countdown("2020/10/10"+" "+selfy.data('closing-time'))
+                    .on('update.countdown', function(event) {
+                        var format = '%H:%M:%S';
+
+
+                        $(this).html(event.strftime(format));
+                    })
+                    .on('finish.countdown', function(event) {
+                        $(this).html('This offer has expired!')
+                        .parent().addClass('disabled');
+                    });;
+            });
+        });
+    </script>
+@endsection

@@ -49,7 +49,7 @@ class RaceController extends Controller
      */
     public function show($id)
     {
-        return view();
+        return view('races.single');
     }
 
     /**
