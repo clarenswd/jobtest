@@ -46,6 +46,19 @@
         font-size:1.5rem;
     }
 </style>
+<div class="top-bar" id="realEstateMenu">
+    <div class="top-bar-left">
+        <ul class="menu accordion-menu" data-responsive-menu="accordion" role="tablist" aria-multiselectable="true" data-accordionmenu="39s4i0-accordionmenu" data-responsivemenu="9g2xqu-responsivemenu">
+            <li class="menu-text" role="menuitem">Job test</li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        {{--<ul class="menu">--}}
+            {{--<li><a href="#">My Account</a></li>--}}
+            {{--<li><a class="button">Login</a></li>--}}
+        {{--</ul>--}}
+    </div>
+</div>
 <div class="container">
     @yield('content')
 </div>
