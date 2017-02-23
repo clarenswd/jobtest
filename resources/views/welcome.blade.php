@@ -31,7 +31,7 @@
                         if(event.offset.minutes > 0) {
                             format = '%-M mins %-S sec' ;
                         }
-                        $('.jx-countdown-value').html(event.strftime(format));
+                        $('.jx-countdown-value', selfy).html(event.strftime(format));
                     })
                     .on('finish.countdown', function(event) {
                         $(this).hide()
