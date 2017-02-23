@@ -15,8 +15,6 @@
         display: block;
         width:100%;
         margin:0 auto;
-        border:1px solid red;
-
     }
     .race{
         display: block;
@@ -67,5 +65,7 @@
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 @yield ('xtra-js')
+
+@yield ('jx-scripts')
 </body>
 </html>

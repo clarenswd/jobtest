@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Meeting;
 use App\Race;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class RaceController extends Controller
      */
     public function create()
     {
-        //
+        $meetings = Meeting::all();
+        return view('races.create_race')->with('meetings',$meetings);
     }
 
     /**
