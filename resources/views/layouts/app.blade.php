@@ -21,6 +21,7 @@
         <ul class="menu">
             <li><a href="/">Races</a></li>
             <li><a href="/races/create" >Create Race</a></li>
+            <li><a href="/seedraces" >Seed Race Table</a></li>
         </ul>
     </div>
 </div>
