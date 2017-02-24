@@ -29,6 +29,8 @@ class RaceController extends Controller
         return view('welcome')->with('races', $races->sortBy('closing_time'));
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -124,5 +126,8 @@ class RaceController extends Controller
         return redirect()->action('RaceController@index');
 
     }
+
+
+
 
 }

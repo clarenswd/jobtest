@@ -34,14 +34,15 @@
 
 @section('xtra-js')
     <script src="/js/jquery.countdown.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script>
         $(function(){
             $('a.jx-countdown').each(function(){
                 var selfy =$(this);
-                selfy.countdown("2020/10/10"+" "+selfy.data('closing-time'))
+                var now = moment().format("YYYY-MM-DD");
+                selfy.countdown(now +" "+selfy.data('closing-time'))
                     .on('update.countdown', function(event) {
                         var format = '%H:%M:%S';
-                        console.log(event.offset.minutes);
 
                         if(event.offset.minutes > 0) {
                             format = '%-M mins %-S sec' ;
@@ -52,7 +53,12 @@
                         $('.jx-countdown-value', selfy).html(event.strftime(format));
                     })
                     .on('finish.countdown', function(event) {
-                        $(this).hide()
+                        selfy.addClass("finished");
+                        selfy.parent('li').hide();
+                        //Get new batch ajax
+
+
+
 
                     });;
             });

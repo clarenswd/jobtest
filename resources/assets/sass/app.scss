@@ -142,6 +142,9 @@ ul.mobile_menu{
   }
 }
 .content{
+  @media(max-width:$mobile){
+    margin-top:10px;
+  }
 
 }
 
@@ -241,5 +244,10 @@ ul.mobile_menu{
 /*description, link panel*/
 .project_info{
 
+}
+
+.finished{
+  background: yellow;
+  border:1px solid red;
 }
 
