@@ -16,6 +16,7 @@ class CreateCompetitorsTable extends Migration
         Schema::create('competitors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('position');
+            $table->string('name');
 
             $table->integer('race_id')->unsigned();
             $table->foreign('race_id')->references('id')->on('races')->onDelete('cascade');

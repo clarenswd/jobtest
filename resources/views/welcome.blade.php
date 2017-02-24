@@ -23,12 +23,13 @@
                 </ul>
             </div>
 
-
+            <div class="hidden">
+                <img src="/img/spinner.gif" alt="" id="spinner">
+            </div>
             <div class="content ajax_panel columns small-12 medium-6" id="jx-detail-view">
 
             </div>
 
-            @include('project-info')
 
 
 
@@ -97,8 +98,11 @@
             $('.jx-countdown').on('click', function(e){
                 e.preventDefault();
 
-                $('#jx-detail-view').load( "/races/" + $(this).data('race-id'), function() {
+                $('#spinner').clone().appendTo('#jx-detail-view');
                 $('#jx-detail-view').show();
+
+                $('#jx-detail-view').load( "/races/" + $(this).data('race-id'), function() {
+
 console.log("do it, just do it!")
                 });
             });

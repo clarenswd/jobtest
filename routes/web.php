@@ -18,9 +18,12 @@ Route::get('/', function () {
 });
 
 Route::resource('races', 'RaceController');
+Route::resource('competitors', 'CompetitorController');
+Route::resource('meetings', 'CompetitorController');
 //Ajax call
 Route::get('js-get-next-five','RaceController@getNextFive');
 Route::post('close-race','RaceController@closeRace');
 
 //"Dev" routes
 Route::get('seedraces','RaceController@runSeeder');
+

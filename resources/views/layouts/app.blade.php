@@ -49,7 +49,9 @@
 </div>
 <!-- EOF BODY FROM PARTIALS -->
 
-
+<div class="container row">
+    @include('project-info')
+</div>
 
 
 
