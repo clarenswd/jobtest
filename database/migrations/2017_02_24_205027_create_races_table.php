@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToRacesTable extends Migration
+class CreateRacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class AddForeignKeyToRacesTable extends Migration
      */
     public function up()
     {
+        Schema::create('races', function (Blueprint $table) {
+            $table->increments('id');
+            $table->time('closing_time')->nullable();
+            $table->boolean('is_closed')->default(false);
 
-        Schema::table('races', function (Blueprint $table) {
             $table->integer('meeting_id')->unsigned();
             $table->foreign('meeting_id')
                 ->references('id')->on('meetings')
                 ->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
@@ -29,8 +34,6 @@ class AddForeignKeyToRacesTable extends Migration
      */
     public function down()
     {
-        Schema::table('races', function (Blueprint $table) {
-            $table->dropForeign('meeting_id');
-        });
+        Schema::dropIfExists('races');
     }
 }

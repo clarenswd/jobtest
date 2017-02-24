@@ -58,6 +58,9 @@
     .text-center{
         text-align: center;
     }
+    .menu-text{
+        padding:0px;
+    }
 </style>
 <div class="top-bar" id="realEstateMenu">
     <div class="top-bar-left">

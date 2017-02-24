@@ -22,6 +22,7 @@ class CreateCompetitorsTable extends Migration
 
             $table->timestamps();
         });
+
     }
 
     /**
