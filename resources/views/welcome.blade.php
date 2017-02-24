@@ -23,6 +23,11 @@
                 </ul>
             </div>
 
+
+            <div class="content columns small-12 medium-6" id="jx-detail-view">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aut commodi corporis cumque doloremque, expedita facere fuga harum illo inventore ipsa molestiae officia, quibusdam totam vitae voluptas voluptatem. Rem?
+            </div>
+
             @include('project-info')
 
 
@@ -45,10 +50,14 @@
 
 
         $(function(){
+
+            /***
+             * Countdown JS library
+             */
             $('a.jx-countdown').each(function(){
                 var selfy =$(this);
                 var now = moment().format("YYYY-MM-DD");
-//                alert(now +" "+selfy.data('closing-time'));
+
                 selfy.countdown(now +" "+selfy.data('closing-time'))
                     .on('update.countdown', function(event) {
                         var format = '%H:%M:%S';
@@ -80,6 +89,19 @@
 
                     });;
             });
+
+            /***
+             *  Show Detail view on click - ajax call
+             */
+            $('.jx-countdown').on('click', function(e){
+                e.preventDefault();
+
+                $('#jx-detail-view').load( "/races/" + $(this).data('race-id'), function() {
+console.log("do it, just do it!")
+                });
+            });
+
+
         });
     </script>
 @endsection
