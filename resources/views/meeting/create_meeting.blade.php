@@ -15,6 +15,7 @@
                     <div class="form-group">
                         <label for="type">Meeting type</label>
                         <select name="meeting_type"  id="meeting_type" placeholder="Select the type for this meeting">
+                            <option value="">-----</option>
                             @foreach ($types as $k =>$type)
                                 <option value="{{ $type }}">{{ $k }}</option>
                             @endforeach
@@ -64,12 +65,5 @@
 
 
 @section('jx-scripts')
-    <script>
-        $(function(){
-            //Documentation::
-            // http://jonthornton.github.io/jquery-timepicker/
-            $('#closing_time').timepicker({step:1, timeFormat:"H:i:s" });
 
-        });
-    </script>
 @endsection

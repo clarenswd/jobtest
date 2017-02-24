@@ -28,8 +28,9 @@
             <a class="ninja-btn jx-menu-btn" title="menu"><span></span></a>
         </div>
         <ul class="menu mobile_menu jx-links">
-            <li><a href="/">Races</a></li>
-            <li><a href="/races/create" >Create Race</a></li>
+            <li><a href="/meetings/create">Meetings</a></li>
+            <li><a href="/races/create">Races</a></li>
+            <li><a href="/competitors/create">Competitors</a></li>
             <li><a href="/seedraces" >Seed Race Table</a></li>
         </ul>
     </div>

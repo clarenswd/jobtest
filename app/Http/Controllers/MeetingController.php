@@ -14,7 +14,7 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
