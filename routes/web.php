@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::resource('races', 'RaceController');
 Route::resource('competitors', 'CompetitorController');
-Route::resource('meetings', 'CompetitorController');
+Route::resource('meetings', 'MeetingController');
 //Ajax call
 Route::get('js-get-next-five','RaceController@getNextFive');
 Route::post('close-race','RaceController@closeRace');

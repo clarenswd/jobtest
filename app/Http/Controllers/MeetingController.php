@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Meeting;
 use Illuminate\Http\Request;
 
 class MeetingController extends Controller
@@ -23,7 +24,10 @@ class MeetingController extends Controller
      */
     public function create()
     {
-        //
+        $types = Meeting::$meeting_type;
+        $meetings=  Meeting::all();
+
+        return view('meeting.create_meeting')->with(['types'=>$types, 'meetings'=>$meetings]);
     }
 
     /**
