@@ -24,9 +24,12 @@ class RaceController extends Controller
     public function index()
     {
         //sort in DB query to get the top 5
-        $races = Race::where('closing_time','>', Carbon::now())->orderBy('closing_time', "ASC")
+        $races = Race::where('closing_time','>', Carbon::now())
             ->where('is_closed', 0)
-            ->get()->slice(0,5);
+            ->orderBy('closing_time', "ASC")
+            ->get()
+            ->slice(0,5);
+
         //Invert the sort - array level
         return view('welcome')->with('races', $races->sortBy('closing_time'));
     }
@@ -34,7 +37,12 @@ class RaceController extends Controller
     public function getNextFive()
     {
         //sort in DB query to get the top 5
-        $races = Race::where('closing_time','>', Carbon::now())->orderBy('closing_time', "ASC")->get()->slice(0,5);
+        $races = Race::where('closing_time','>', Carbon::now())
+            ->where('is_closed', 0)
+            ->orderBy('closing_time', "ASC")
+            ->get()
+            ->slice(0,5);
+
         //Invert the sort - array level
         return response()->json(['races' => $races->sortBy('closing_time')]);
     }
