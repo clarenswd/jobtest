@@ -43,7 +43,7 @@
                     @if(count($meetings)>0)
                         @foreach($meetings as $meeting)
                             <tr>
-                                <td>{{$meeting->getTypeMeetingString()}}</td>
+                                <td>{{$meeting->type}}</td>
                                 <td>{{$meeting->location}}</td>
                                 <td>{{count($meeting->races)}}</td>
                             </tr>
