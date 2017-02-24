@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Competitor;
 use App\Meeting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class MeetingController extends Controller
 {
@@ -38,7 +40,16 @@ class MeetingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $modObj= new Meeting();
+        $modObj->location = $request->location;
+        $modObj->type    = $request->meeting_type;
+        $modObj->save();
+
+        // redirect
+        Session::flash('message', 'Meeting was added to the system!');
+        return redirect()->action('MeetingController@create');
+
     }
 
     /**

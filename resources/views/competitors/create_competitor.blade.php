@@ -17,7 +17,15 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input type="number" name="position" id="position">
+                    </div>
 
                     <button type="submit" class="button">Save Competitor</button>
 

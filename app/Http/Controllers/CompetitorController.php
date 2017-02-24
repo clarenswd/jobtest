@@ -47,7 +47,16 @@ class CompetitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $modObj= new Competitor();
+        $modObj->race_id = $request->race;
+        $modObj->name    = $request->name;
+        $modObj->position= $request->position;
+        $modObj->save();
+
+        // redirect
+        Session::flash('message', 'Competitor was added to the system!');
+        return redirect()->action('CompetitorController@create');
+
     }
 
     /**
