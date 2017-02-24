@@ -43,7 +43,7 @@
                     <thead>
                     <tr>
                         <th width="150">Race Time</th>
-                        <th width="150">Race Location | Meeting *</th>
+                        <th width="150">Race Meeting </th>
                         <th width="150">N. Competitors*</th>
                         <th width="150">Status</th>
                     </tr>
@@ -62,10 +62,6 @@
                     </tbody>
                 </table>
 
-                <small>
-                   * I didn't fully understand what exactly meeting was, I hope it will get explained in the next revision. I assumed and from google, those are the actual fields races take place.
-
-                </small>
             </div>
 
         </div>

@@ -1,16 +1,16 @@
 <!-- Stored in resources/views/layouts/app.blade.php -->
 <html>
 <head>
-    <title>App Name - @yield('title')</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <title>JOB TEST - @yield('title')</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
     {{--icons.--}}
     <link rel="stylesheet" href="/css/pe-icon-7-stroke.css">
+
+    {{--Compiled SCSS --}}
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-<style>
-
-</style>
 <div class="top-bar" id="realEstateMenu">
     <div class="top-bar-left">
         <ul class="menu accordion-menu" data-responsive-menu="accordion" role="tablist" aria-multiselectable="true" data-accordionmenu="39s4i0-accordionmenu" data-responsivemenu="9g2xqu-responsivemenu">
