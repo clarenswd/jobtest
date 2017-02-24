@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 
+
+
+
+
 class RaceController extends Controller
 {
     /**
@@ -110,6 +114,15 @@ class RaceController extends Controller
     }
 
 
+    //Dev - run RaceTableSeeder
 
+    public function runSeeder(){
+        $seed = new \RaceTableSeeder();
+        $seed->run();
+        Session::flash('message', 'RaceSeeder was run!');
+
+        return redirect()->action('RaceController@create');
+
+    }
 
 }

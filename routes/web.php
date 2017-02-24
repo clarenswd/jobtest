@@ -18,3 +18,8 @@ Route::get('/', function () {
 });
 
 Route::resource('races', 'RaceController');
+
+
+
+//"Dev" routes
+Route::get('seedraces','RaceController@runSeeder');

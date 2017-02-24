@@ -34,10 +34,14 @@
 
 
 <!-- BODY FROM PARTIALS -->
-<div class="container">
+<div class="container row">
     @yield('content')
 </div>
 <!-- EOF BODY FROM PARTIALS -->
+
+
+
+
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
