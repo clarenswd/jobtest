@@ -6,6 +6,9 @@ use App\Meeting;
 use App\Race;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+
 
 class RaceController extends Controller
 {
@@ -50,8 +53,9 @@ class RaceController extends Controller
         $modObj->save();
 
         // redirect
+
         Session::flash('message', 'Race was added to the system!');
-        return Redirect::to('games');
+        return Redirect::to('races');
 
     }
 

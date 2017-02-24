@@ -31,18 +31,20 @@
                     <button type="submit" class="button">Save Race</button>
 
                 </form>
+                <div class="callout warning">
+                    <strong>Races data</strong>
+                    <p>We currently have <strong>{{count($current_races)}}</strong> races stored in the system.</p>
+                </div>
             </div>
 
             <div class="columns small-12 medium-8">
-                <div class="callout warning">
-                    <h6>Races data</h6>
-                    <p>We currently have <strong>{{count($current_races)}}</strong> stored in the system.</p>
-                </div>
+
                 <table>
                     <thead>
                     <tr>
                         <th width="150">Race Time</th>
                         <th width="150">Race Location | Meeting *</th>
+                        <th width="150">N. Competitors*</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -50,6 +52,7 @@
                     <tr>
                         <td>{{$current_race->closing_time}}</td>
                         <td>{{$current_race->meeting->location}}</td>
+                        <td>{{count($current_race->competitors)}}</td>
 
                     </tr>
                     @endforeach

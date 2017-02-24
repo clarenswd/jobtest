@@ -16,4 +16,7 @@ class Race extends Model
     {
         return $this->belongsTo('App\Meeting');
     }
+
+
+
 }

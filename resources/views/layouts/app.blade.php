@@ -25,22 +25,38 @@
     }
     /*Thoroughbred*/
     .T-race{
-        color:red;
+        color:#333;
         background-image: url('/img/horse.png');
     }
     /*Greyhounds*/
     .G-race{
-        color:blue;
+        color:#333;
         background-image: url('/img/dog.png');
     }
     /*Harness*/
     .H-race{
-        color:green;
+        color:#333;
         background-image: url('/img/carreta.png');
     }
 
     .title{
         font-size:1.5rem;
+    }
+
+    /*I know I should not be doing this, hope the Rapid response team can understand me. */
+    .list_races{
+        margin:0;
+    }
+    .list_races li{
+        list-style-type: none;
+        padding:1rem;
+        background: #f7f7f7;
+    }
+    .list_races li:hover{
+        background: #fff;
+    }
+    .text-center{
+        text-align: center;
     }
 </style>
 <div class="top-bar" id="realEstateMenu">
