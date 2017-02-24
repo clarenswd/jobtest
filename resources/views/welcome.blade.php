@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-            <div class="content">
+            <div class="content columns small-12 medium-6">
                 <h5 class="title text-center">Next 5 races</h5>
                 <ul class="list_races">
+                    @if(count($races)==0)
+                        <span>All races are closed.</span>
+                    @endif
                     @foreach ($races as $race)
                         <li>
                             <a href="/races/{{$race->id}}" class="jx-countdown race {{$race->meeting->type}}-race" data-closing-time="{{$race->closing_time}}">

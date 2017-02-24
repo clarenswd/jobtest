@@ -9,58 +9,7 @@
 </head>
 <body>
 <style>
-    .container{
-        max-width:900px;
-        display: block;
-        width:100%;
-        margin:0 auto;
-    }
-    .race{
-        display: block;
-        width:250px;
-        /*border:1px solid red;*/
-        background-repeat: no-repeat!important;
-        background-position: 0% 50%;
-        padding-left:34px;
-    }
-    /*Thoroughbred*/
-    .T-race{
-        color:#333;
-        background-image: url('/img/horse.png');
-    }
-    /*Greyhounds*/
-    .G-race{
-        color:#333;
-        background-image: url('/img/dog.png');
-    }
-    /*Harness*/
-    .H-race{
-        color:#333;
-        background-image: url('/img/carreta.png');
-    }
 
-    .title{
-        font-size:1.5rem;
-    }
-
-    /*I know I should not be doing this, hope the Rapid response team can understand me. */
-    .list_races{
-        margin:0;
-    }
-    .list_races li{
-        list-style-type: none;
-        padding:1rem;
-        background: #f7f7f7;
-    }
-    .list_races li:hover{
-        background: #fff;
-    }
-    .text-center{
-        text-align: center;
-    }
-    .menu-text{
-        padding:0px;
-    }
 </style>
 <div class="top-bar" id="realEstateMenu">
     <div class="top-bar-left">
