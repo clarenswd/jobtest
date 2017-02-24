@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    {{$race->closing_time}}
-    //Show the competitors
+    <div class="time">  {{$race->closing_time}}</div>
+
+    <ul>
+        @foreach ($race->competitors as $competitor)
+            {{$competitor->position}}
+        @endforeach
+    </ul>
+
 @endsection

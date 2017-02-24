@@ -45,6 +45,7 @@
                         <th width="150">Race Time</th>
                         <th width="150">Race Location | Meeting *</th>
                         <th width="150">N. Competitors*</th>
+                        <th width="150">Status</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -52,7 +53,9 @@
                     <tr>
                         <td>{{$current_race->closing_time}}</td>
                         <td>{{$current_race->meeting->location}}</td>
+
                         <td>{{count($current_race->competitors)}}</td>
+                        <td>{{$current_race->isClosed()}}</td>
 
                     </tr>
                     @endforeach

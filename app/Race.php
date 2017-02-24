@@ -17,6 +17,8 @@ class Race extends Model
         return $this->belongsTo('App\Meeting');
     }
 
-
+    public function isClosed(){
+        return ($this->is_closed == 1) ? "CLOSED" : "OPEN";
+    }
 
 }
