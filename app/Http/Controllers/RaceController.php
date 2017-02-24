@@ -114,6 +114,7 @@ class RaceController extends Controller
     public function closeRace(Request $request)
     {
         $race = Race::find($request->id);
+
         $race->is_closed = true;
         $race->save();
         return response()->json(['success' =>"true"]);
