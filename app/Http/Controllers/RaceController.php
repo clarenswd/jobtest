@@ -121,7 +121,7 @@ class RaceController extends Controller
         $seed->run();
         Session::flash('message', 'RaceSeeder was run!');
 
-        return redirect()->action('RaceController@create');
+        return redirect()->action('RaceController@index');
 
     }
 
