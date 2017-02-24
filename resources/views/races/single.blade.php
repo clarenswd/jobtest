@@ -1,10 +1,12 @@
 
-    <div class="time">Race Time:  {{$race->closing_time}}</div>
-    <div class="time">Race Status:  {{$race->isClosed()}}</div>
+    <span>Race Time: </span>
+    <span class="time">{{substr($race->closing_time, 0, -3)}}</span>
+    <span>Race Status: </span>
+    <span class="status {{$race->isClosed()}}">   {{$race->isClosed()}}</span>
 
-    <ul>
+    <ol>
         @foreach ($race->competitors as $competitor)
             {{$competitor->position}}
         @endforeach
-    </ul>
+    </ol>
 

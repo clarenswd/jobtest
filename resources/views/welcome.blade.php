@@ -24,8 +24,8 @@
             </div>
 
 
-            <div class="content columns small-12 medium-6" id="jx-detail-view">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aut commodi corporis cumque doloremque, expedita facere fuga harum illo inventore ipsa molestiae officia, quibusdam totam vitae voluptas voluptatem. Rem?
+            <div class="content ajax_panel columns small-12 medium-6" id="jx-detail-view">
+
             </div>
 
             @include('project-info')
@@ -93,10 +93,12 @@
             /***
              *  Show Detail view on click - ajax call
              */
+            $('#jx-detail-view').hide();
             $('.jx-countdown').on('click', function(e){
                 e.preventDefault();
 
                 $('#jx-detail-view').load( "/races/" + $(this).data('race-id'), function() {
+                $('#jx-detail-view').show();
 console.log("do it, just do it!")
                 });
             });

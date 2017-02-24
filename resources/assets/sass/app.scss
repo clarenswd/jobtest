@@ -243,7 +243,9 @@ ul.mobile_menu{
 
 /*description, link panel*/
 .project_info{
-
+  .project-description{
+    font-size:.8rem;
+  }
 }
 
 .finished{
@@ -253,4 +255,22 @@ ul.mobile_menu{
 
 .mt-100{
   padding-top:40px;
+}
+
+//The wrapper panel for the single view on the index/races page
+.ajax_panel{
+  border: 1px solid #ccc;
+  margin-top: 42px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+.status{
+  &.OPEN{
+    color:green;
+  }
+  &.CLOSE{
+    color:darkred;
+  }
 }
