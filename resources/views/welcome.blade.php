@@ -36,10 +36,19 @@
     <script src="/js/jquery.countdown.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script>
+        //Ajax Config
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN':  $('meta[name="csrf-token"]').attr('content') }
+        });
+
+
+
+
         $(function(){
             $('a.jx-countdown').each(function(){
                 var selfy =$(this);
                 var now = moment().format("YYYY-MM-DD");
+//                alert(now +" "+selfy.data('closing-time'));
                 selfy.countdown(now +" "+selfy.data('closing-time'))
                     .on('update.countdown', function(event) {
                         var format = '%H:%M:%S';
@@ -56,11 +65,10 @@
                         selfy.addClass("finished");
                         selfy.parent('li').hide();
                         //Set Race to Close
-
                         $.ajax({
                             type: "POST",
                             url: '/close-race',
-                            data: {"id": selfy.data("race-id")},
+                            data: { id : selfy.data("race-id")},
                             dataType: 'json',
                             success: function (data) {
                                 console.log(data);
