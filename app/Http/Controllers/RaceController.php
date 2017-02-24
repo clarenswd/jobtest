@@ -29,6 +29,13 @@ class RaceController extends Controller
         return view('welcome')->with('races', $races->sortBy('closing_time'));
     }
 
+    public function getNextFive()
+    {
+        //sort in DB query to get the top 5
+        $races = Race::where('closing_time','>', Carbon::now())->orderBy('closing_time', "ASC")->get()->slice(0,5);
+        //Invert the sort - array level
+        return response()->json(['races' => $races->sortBy('closing_time')]);
+    }
 
 
     /**
@@ -103,6 +110,18 @@ class RaceController extends Controller
     {
         //
     }
+
+    public function closeRace(Request $request)
+    {
+        $race = Race::find($request->id);
+        $race->is_closed = true;
+        $race->save();
+        return response()->json(['success' =>"true"]);
+
+
+
+    }
+
 
     /**
      * Remove the specified resource from storage.

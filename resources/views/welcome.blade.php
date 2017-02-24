@@ -3,7 +3,7 @@
 
             <div class="content columns small-12 medium-6">
                 <h5 class="title text-center">Next 5 races</h5>
-                <ul class="list_races">
+                <ul class="list_races" id="jx-race-holder">
                     @if(count($races)==0)
                         <span>All races are closed.</span>
                     @endif
@@ -55,9 +55,20 @@
                     .on('finish.countdown', function(event) {
                         selfy.addClass("finished");
                         selfy.parent('li').hide();
-                        //Get new batch ajax
 
-
+//                        //Get new 5 ajax
+//                        $.ajax({
+//                            type: "GET",
+//                            url: '/js-get-next-five',
+//                            dataType: 'json',
+//                            success: function (data) {
+//                                console.log(data);
+//
+//                            },
+//                            error: function (data) {
+//                                console.log(data);
+//                            }
+//                        });
 
 
                     });;
