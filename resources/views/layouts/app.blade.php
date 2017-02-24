@@ -21,7 +21,7 @@
         <div class="menu_mobile_toggle clearfix  ">
             <a class="ninja-btn jx-menu-btn" title="menu"><span></span></a>
         </div>
-        <ul class="menu mobile_menu">
+        <ul class="menu mobile_menu jx-links">
             <li><a href="/">Races</a></li>
             <li><a href="/races/create" >Create Race</a></li>
             <li><a href="/seedraces" >Seed Race Table</a></li>
@@ -57,8 +57,13 @@
 
 
 <script>
-
-
+    //Toggle menu js
+    $(function(){
+        $('.jx-menu-btn').on('click', function(){
+            $('.jx-menu-btn').toggleClass('active');
+            $('.jx-links').toggle();
+        });
+    });
 
 </script>
 
