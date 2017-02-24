@@ -1,8 +1,8 @@
 <!-- Stored in resources/views/layouts/app.blade.php -->
 <html>
 <head>
-    <title>JOB TEST - @yield('title')</title>
-
+    <title>Next5 - @yield('title')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" />
     {{--icons.--}}
     <link rel="stylesheet" href="/css/pe-icon-7-stroke.css">
@@ -14,11 +14,14 @@
 <div class="top-bar" id="realEstateMenu">
     <div class="top-bar-left">
         <ul class="menu accordion-menu" data-responsive-menu="accordion" role="tablist" aria-multiselectable="true" data-accordionmenu="39s4i0-accordionmenu" data-responsivemenu="9g2xqu-responsivemenu">
-            <li class="menu-text" role="menuitem"><a href="/">Job test</a></li>
+            <li class="menu-text" role="menuitem"><a href="/">Next5 <sup>&trade;</sup></a></li>
         </ul>
     </div>
     <div class="top-bar-right">
-        <ul class="menu">
+        <div class="menu_mobile_toggle clearfix  ">
+            <a class="ninja-btn jx-menu-btn" title="menu"><span></span></a>
+        </div>
+        <ul class="menu mobile_menu">
             <li><a href="/">Races</a></li>
             <li><a href="/races/create" >Create Race</a></li>
             <li><a href="/seedraces" >Seed Race Table</a></li>
@@ -51,5 +54,14 @@
 @yield ('xtra-js')
 
 @yield ('jx-scripts')
+
+
+<script>
+
+
+
+</script>
+
+
 </body>
 </html>

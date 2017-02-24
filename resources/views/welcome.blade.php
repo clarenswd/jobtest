@@ -9,9 +9,9 @@
                     @endif
                     @foreach ($races as $race)
                         <li>
-                            <a href="/races/{{$race->id}}" class="jx-countdown race {{$race->meeting->type}}-race" data-closing-time="{{$race->closing_time}}">{{$race->closing_time}}
+                            <a href="/races/{{$race->id}}" class="jx-countdown race {{$race->meeting->type}}-race" data-closing-time="{{$race->closing_time}}">
                                 <span class="jx-countdown-value">{{$race->closing_time}}</span>
-                                -
+
                                 <span class="location">
                                     <i class="pe-7s-map-marker"></i>
                                         {{$race->meeting->location}}

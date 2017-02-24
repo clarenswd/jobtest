@@ -4,7 +4,7 @@
 
 // Variables
 @import "variables";
-
+$mobile : 640px;
 
 
 //Common shared styles overrides
@@ -13,24 +13,160 @@
   display: block;
   width:100%;
   margin:0 auto;
+  padding-top:10px;
 }
 .button{
   background: #a8ba0a;
 }
 
+.top-bar-left{
+  @media(max-width:$mobile){
+    width:50%!important;
+  }
+}
+.top-bar-right{
+  @media(max-width:$mobile){
+    width:50%!important;
+  }
+}
+.menu_mobile_toggle{
+  position: relative;
+  z-index: 9000;
 
 
+  display: none;
+
+  width: 80px;
+  text-align: center;
+  float: right;
+  top: 10px;
+  width: 100%;
+
+  text-align: right;
+  @media(max-width:$mobile){
+    display: block;
+  }
 
 
+  .ninja-btn {
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 28.66666667px;
+    cursor: pointer;
+    padding: 0;
+
+    &.active {
+      //list of menu items
+      ul.mobile_menu{
+        display: block;
+      }
+
+      //Menu toggle btn bars
+      span{
+        background-color: rgba(255, 255, 255, 1);
+        transform: translateX(-10px);
+        &:before{
+          transform: translateX(15px);
+
+        }
+        &:after{
+          transform: translateX(15px);
+        }
+      }
+    }
+    span {
+
+      position: relative;
+      display: inline-block;
+      float: left;
+      margin-top: 13.33333333px;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      background-color: #FFFFFF;
+      width: 44px;
+      height: 2px;
+
+      &:before {
+        top: -13.33333333px;
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        background-color: #FFFFFF;
+        width: 44px;
+        height: 2px;
+      }
+      &:after{
+        top: 13.33333333px;
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        background-color: #FFFFFF;
+        width: 44px;
+        height: 2px;
+      }
+
+    }
+  }
+}
+
+ul.mobile_menu{
+  display: none;
+  @media (max-width: $mobile) {
+   li{
+     display: block;
+   } 
+  }
+}
+.content{
+
+}
 
 
 //welcome- index page, listing of next 5 races
 .race{
   display: block;
-  width:250px;
+  width:100%;
   background-repeat: no-repeat!important;
   background-position: 0% 50%;
   padding-left:34px;
+
+  span{
+    &:first-child{
+      width:50%;
+      display: inline-block;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    &.location{
+      font-size: 0.8rem;
+      font-style: italic;
+      opacity: 0.7;
+    }
+  }
+
+  //arrow icon
+  &>i{
+    &:last-of-type{
+      float:right;
+      top: 7px;
+      position: relative;
+    }
+
+  }
 }
 
 /*Thoroughbred*/
@@ -55,15 +191,27 @@
 
 .list_races{
   margin:0;
+  li{
+    list-style-type: none;
+    padding:1rem;
+    background: #f7f7f7;
+
+    &:hover{
+      background: #fff;
+      a{
+        color:red!important;
+      }
+    }
+
+  }
+  //override default Foundation a:hover color
+  a{
+    &:hover{
+      color:red!important;
+    }
+  }
 }
-.list_races li{
-  list-style-type: none;
-  padding:1rem;
-  background: #f7f7f7;
-}
-.list_races li:hover{
-  background: #fff;
-}
+
 .text-center{
   text-align: center;
 }
@@ -73,9 +221,15 @@
 .top-bar, .top-bar ul{
   background: #d32123;
   color:white;
-}
-.top-bar a{
-  color:white;
+
+  a{
+    color:white;
+  }
 }
 
+
+/*description, link panel*/
+.project_info{
+
+}
 
