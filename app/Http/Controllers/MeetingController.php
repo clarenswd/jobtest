@@ -26,7 +26,9 @@ class MeetingController extends Controller
      */
     public function create()
     {
-        $types = Meeting::$meeting_type;
+        $m=new Meeting();
+        $types = $m->meeting_type;
+
         $meetings=  Meeting::all();
 
         return view('meeting.create_meeting')->with(['types'=>$types, 'meetings'=>$meetings]);

@@ -8,7 +8,7 @@ class Meeting extends Model
 {
 
     //should be stored in a table
-    public static  $meeting_type = [
+    public $meeting_type = [
         'THOROUGHBRED'  => "T",
         'GREYHOUNDS'  => "G",
         'HARNESS'  => "H",
@@ -20,7 +20,7 @@ class Meeting extends Model
     }
 
     public function getTypeMeetingString(){
-        $key = array_search($this->type, self::$meeting_type); //
+        $key = array_search($this->type, $this->meeting_type); //
         return $key;
     }
 }
