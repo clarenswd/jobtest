@@ -27,11 +27,14 @@ class MeetingController extends Controller
     public function create()
     {
         $m=new Meeting();
-        $types = $m->meeting_type;
+        $types =  [
+            'THOROUGHBRED'  => "THOROUGHBRED",
+            'GREYHOUNDS'  => "GREYHOUNDS",
+            'HARNESS'  => "HARNESS",
+        ];;
 
-        $meetings=  Meeting::all();
-        print_r($meetings[0]);
-        dd($meetings);
+        $meetings =  Meeting::all();
+
         return view('meeting.create_meeting')->with(['types'=>$types, 'meetings'=>$meetings]);
     }
 
