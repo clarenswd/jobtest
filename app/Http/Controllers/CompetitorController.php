@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Competitor;
 use App\Race;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CompetitorController extends Controller
 {
@@ -54,6 +55,7 @@ class CompetitorController extends Controller
         $modObj->save();
 
         // redirect
+
         Session::flash('message', 'Competitor was added to the system!');
         return redirect()->action('CompetitorController@create');
 

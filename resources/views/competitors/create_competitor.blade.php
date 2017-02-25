@@ -12,7 +12,7 @@
                         <label for="race">Race</label>
                         <select name="race"  id="race" placeholder="Select race">
                             @foreach ($races as $race)
-                                <option value="{{ $race->id }}">{{ $race->meeting->location}}</option>
+                                <option value="{{ $race->id }}">{{ $race->meeting->location}} - {{ $race->closing_time}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -47,7 +47,7 @@
                         @foreach($competitors as $competitor)
                             <tr>
                                 <td>{{$competitor->name}}</td>
-                                <td>{{$competitor->race->meeting->location}}</td>
+                                <td>{{$competitor->race->meeting->location}} - {{$competitor->race->closing_time}}</td>
                                 <td>{{$competitor->position}}</td>
                             </tr>
                         @endforeach
