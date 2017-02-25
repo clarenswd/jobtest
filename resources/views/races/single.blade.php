@@ -6,11 +6,15 @@
     <span class="status {{$race->isClosed()}}">   {{$race->isClosed()}}</span>
     <br>
     <span>Race Location: </span>
-    <span class="status {{$race->meeting->location}}">   {{$race->isClosed()}}</span>
+    <span class="status {{$race->meeting->location}}">   {{$race->meeting->location}}</span>
 
     <ol>
-        @foreach ($race->competitors as $competitor)
-            {{$competitor->position}}
-        @endforeach
+        @if (count($race->competitors ) > 0)
+            @foreach ($race->competitors as $competitor)
+               <li> {{$competitor->name}} - {{$competitor->position}}</li>
+            @endforeach
+        @else
+           <li>- No Competitors registered yet.</li>
+        @endif
     </ol>
 

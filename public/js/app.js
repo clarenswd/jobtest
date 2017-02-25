@@ -63,12 +63,11 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 10:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -88,18 +87,16 @@ var app = new Vue({
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(34));
+Vue.component('example', __webpack_require__(3));
 
 /***/ }),
-
-/***/ 11:
+/* 1 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-
-/***/ 30:
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -128,15 +125,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 };
 
 /***/ }),
-
-/***/ 34:
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(35)(
+var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(30),
+  __webpack_require__(2),
   /* template */
-  __webpack_require__(36),
+  __webpack_require__(5),
   /* scopeId */
   null,
   /* cssModules */
@@ -163,8 +159,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-
-/***/ 35:
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = function normalizeComponent (
@@ -217,8 +212,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-
-/***/ 36:
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -247,14 +241,12 @@ if (false) {
 }
 
 /***/ }),
-
-/***/ 39:
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(10);
-module.exports = __webpack_require__(11);
+__webpack_require__(0);
+module.exports = __webpack_require__(1);
 
 
 /***/ })
-
-/******/ });
+/******/ ]);
