@@ -2,7 +2,7 @@
 @section('content')
 
             <div class="content columns small-12 medium-6">
-                <h5 class="title text-center">Next 5 races</h5>
+                <h5 class="section_title">Next 5 races</h5>
                 <ul class="list_races" id="jx-race-holder">
                     @if(count($races)==0)
                         <span>All races are closed.</span>

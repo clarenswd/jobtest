@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="columns small-12 medium-4">
-
+                <h5 class="section_title">Register Races</h5>
                 <form method="post" action="/races">
                     {{ csrf_field() }}
                     <div class="form-group">

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="columns small-12 medium-4">
-
+                <h5 class="section_title">Register Meetings | Locations</h5>
                 <form method="post" action="/meetings">
                     {{ csrf_field() }}
                     <div class="form-group">

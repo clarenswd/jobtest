@@ -6,10 +6,11 @@
         <div class="row">
             <div class="columns small-12 medium-4">
 
+                <h5 class="section_title">Register Competitors</h5>
                 <form method="post" action="/competitors">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="race">Race</label>
+                        <label for="race">Select Race for the competitor:</label>
                         <select name="race"  id="race" placeholder="Select race">
                             @foreach ($races as $race)
                                 <option value="{{ $race->id }}">{{ $race->meeting->location}} - {{ $race->closing_time}}</option>
@@ -18,12 +19,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Insert competitor name:</label>
                         <input type="text" name="name">
                     </div>
 
                     <div class="form-group">
-                        <label for="position">Position</label>
+                        <label for="position">Insert the position for the race:</label>
                         <input type="number" name="position" id="position">
                     </div>
 

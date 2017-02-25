@@ -19,7 +19,7 @@ $mobile : 640px;
   display: none;
 }
 .button{
-  background: #a8ba0a;
+  background: $brand-primary;
 }
 
 .top-bar-left{
@@ -234,7 +234,7 @@ ul.mobile_menu{
   padding:0px;
 }
 .top-bar, .top-bar ul{
-  background: #d32123;
+  background: $brand-primary;
   color:white;
 
   a{
@@ -274,5 +274,19 @@ ul.mobile_menu{
   }
   &.CLOSE{
     color:darkred;
+  }
+}
+
+
+//Css for section title | CRUD PAGES
+.section_title{
+  font-family: 'Raleway', sans-serif;
+  &:after{
+    content: "";
+    height:3px;
+    width:100%;
+    background:$brand-primary;
+    margin-top:5px;
+    display: block;
   }
 }
