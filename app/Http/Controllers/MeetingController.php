@@ -30,7 +30,8 @@ class MeetingController extends Controller
         $types = $m->meeting_type;
 
         $meetings=  Meeting::all();
-
+        print_r($meetings[0]);
+        dd($meetings);
         return view('meeting.create_meeting')->with(['types'=>$types, 'meetings'=>$meetings]);
     }
 
