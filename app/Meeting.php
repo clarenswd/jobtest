@@ -19,8 +19,12 @@ class Meeting extends Model
         return $this->hasMany('App\Race');
     }
 
-    public function getTypeMeetingString(){
-        $key = array_search($this->type, $this->meeting_type); //
+    public function getTypeAttribute($value)
+    {
+        $key = array_search($value, $this->meeting_type);
         return $key;
+
     }
+
+
 }
